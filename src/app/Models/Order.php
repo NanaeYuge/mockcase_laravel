@@ -18,6 +18,7 @@ class Order extends Model
         'shipping_address',
         'payment_status',
         'stripe_payment_intent_id',
+        'total_amount',
     ];
 
     public function user()

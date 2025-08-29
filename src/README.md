@@ -1,176 +1,107 @@
-プロジェクト概要
+# フリマアプリ（模擬案件）
 
-Laravel 製のフリマアプリ。ユーザーは商品出品・一覧閲覧・詳細閲覧・いいね・コメント・購入ができます。
-支払い情報は orders テーブルに統合し、payments テーブルは削除しています（シンプル化）。
+本リポジトリは、Laravelを用いて開発したフリマアプリの模擬案件です。
+ユーザー管理から商品出品・購入、コメントやお気に入り機能までを実装し、基本設計書に準拠した形で構築されています。
 
-主要機能
+---
 
-会員登録/ログイン（Fortify）
+## 1. 開発環境
 
-商品出品・編集・一覧/検索・詳細
+- 言語: PHP 8.2 / JavaScript / HTML / CSS
+- フレームワーク: Laravel 10
+- データベース: MySQL 8.0
+- 環境構築: Docker / Laravel Sail
+- 認証: Laravel Fortify
 
-カテゴリ（多対多）
+---
 
-いいね（Favorites）
+## 2. 実装機能
 
-コメント（Comments）
+### ユーザー関連
+- ユーザー登録 / ログイン / ログアウト
+- プロフィール編集（プロフィール画像アップロード対応）
+- 住所登録・変更機能
 
-購入（Orders）… 購入方法・支払い状態を orders に保存
+### 商品関連
+- 商品一覧表示（検索機能、カテゴリ別表示）
+- 商品出品（複数カテゴリ選択対応、画像アップロード機能）
+- 商品詳細表示（画像、価格、説明、カテゴリ、状態等）
+- 商品編集 / 削除機能
+- お気に入り（いいね）機能
+- コメント機能（投稿・削除、バリデーション対応）
 
-SOLD 表示（items.is_sold／計算値 is_sold_computed に対応）
+### 購入関連
+- 商品購入処理（支払い方法選択、住所確認）
+- Stripe決済（Checkout画面遷移、応用要件）
+- 購入履歴の確認
 
-技術スタック
+### 管理画面（管理者用）
+- ユーザー一覧・詳細・削除
+- お問い合わせ一覧・詳細・検索・削除
+- CSVエクスポート機能（検索条件反映）
 
-PHP 8.2 / Laravel 10
+---
 
-MySQL
+## 3. データベース設計
 
-Blade / CSS
+本アプリケーションの主要なテーブルは以下の通りです。
 
-Stripe 連携予定フィールドあり（orders.stripe_payment_intent_id など）
+- **users** : ユーザー情報（名前、メールアドレス、パスワード 等）
+- **addresses** : 住所情報（郵便番号、住所、建物名）
+- **items** : 商品情報（商品名、価格、状態、説明、画像 等）
+- **categories** : カテゴリ情報（カテゴリ名）
+- **category_item** : 商品とカテゴリの中間テーブル
+- **orders** : 注文情報（支払い方法、配送先、Stripe決済ID 等）
+- **favorites** : お気に入り（いいね機能管理）
+- **comments** : コメント情報（ユーザーによる商品へのコメント）
 
-セットアップ
+---
+
+## 4. ER図
+
+下記のER図にてデータベース構成を示します。
+
+![ER図](./mockcase_laravel_ER.png)
+
+参考:
+- [LaravelでのDB設計（Laraweb）](https://laraweb.net/surrounding/7477/)
+- [Zenn - LaravelのER図設計](https://zenn.dev/bloomer/articles/3f73f7d02e5a63)
+
+---
+
+## 5. セットアップ手順
+
+```bash
+# リポジトリのクローン
+git clone git@github.com:yourname/mockcase-laravel.git
+cd mockcase-laravel
+
+# Docker 起動
+./vendor/bin/sail up -d
+
+# 環境変数設定
 cp .env.example .env
-# DB設定を .env に記入
-composer install
 php artisan key:generate
-php artisan migrate
-php artisan storage:link
+
+# マイグレーション & シーディング
+php artisan migrate --seed
+
+# 開発サーバー起動
 php artisan serve
 
-主な URL
+---
 
-商品一覧：/ または /items
+## 6. テスト
 
-商品出品：/items/create
+本アプリケーションでは PHPUnit を用いた自動テストを実装しています。
 
-商品詳細：/items/{id}
+php artisan test
 
-データモデル（要点）
+---
 
-items.condition は 文字列運用（例：新品/未使用に近い/中古/良好）
+## 7. ライセンス
 
-支払い情報は orders に一元化
+本ソフトウェアは学習用の模擬案件として作成されています。
+営利目的での利用・配布は禁止されています。
 
-payment_method（クレジットカード/銀行振込/コンビニ払い）
-
-payment_status（pending/succeeded/failed）
-
-stripe_payment_intent_id（任意）
-
-SOLD 表示
-
-DB真値：items.is_sold（boolean）
-
-計算値：$item->is_sold_computed（関連注文が1件でもあれば true）
-
-購入フロー（概要）
-
-ユーザーが商品詳細から購入
-
-orders にレコード作成（payment_method / payment_status など）
-
-運用に応じて items.is_sold を更新（注文時 / 決済確定時など）
-
-ER 図（Mermaid）
-
-Mermaid をサポートするビューアで表示可能。ドキュメントにも貼れます。
-
-erDiagram
-    USERS ||--o{ ITEMS : "has many"
-    USERS ||--o{ ORDERS : "has many"
-    USERS ||--o{ FAVORITES : "has many"
-    USERS ||--o{ COMMENTS : "has many"
-    USERS ||--o{ ADDRESSES : "has many"
-
-    ITEMS }o--o{ CATEGORIES : "via category_item"
-    ITEMS ||--o{ FAVORITES : "has many"
-    ITEMS ||--o{ COMMENTS : "has many"
-    ITEMS ||--o{ ORDERS : "has many"
-
-    ORDERS }o--|| ITEMS : "belongs to"
-    FAVORITES }o--|| ITEMS : "belongs to"
-    FAVORITES }o--|| USERS : "belongs to"
-    COMMENTS }o--|| ITEMS : "belongs to"
-    COMMENTS }o--|| USERS : "belongs to"
-    ADDRESSES }o--|| USERS : "belongs to"
-
-    USERS {
-      bigint id PK
-      string name
-      string email
-      string password
-      string postal_code
-      string address
-      string building
-      string profile_image
-      timestamps
-    }
-
-    ITEMS {
-      bigint id PK
-      bigint user_id FK
-      string name
-      text description
-      int price
-      string condition   "※文字列（新品/未使用に近い/中古/良好）"
-      string image_path
-      boolean is_sold
-      timestamps
-    }
-
-    CATEGORIES {
-      bigint id PK
-      string name
-      timestamps
-    }
-
-    CATEGORY_ITEM {
-      bigint id PK
-      bigint item_id FK
-      bigint category_id FK
-      unique (item_id, category_id)
-      timestamps
-    }
-
-    ORDERS {
-      bigint id PK
-      bigint user_id FK
-      bigint item_id FK
-      string payment_method    "クレジットカード/銀行振込/コンビニ払い"
-      string payment_status    "pending/succeeded/failed"
-      string stripe_payment_intent_id
-      string status            "購入完了/処理中 など"
-      string shipping_address  "任意：文字列で保存"
-      timestamps
-    }
-
-    FAVORITES {
-      bigint id PK
-      bigint user_id FK
-      bigint item_id FK
-      timestamps
-    }
-
-    COMMENTS {
-      bigint id PK
-      bigint user_id FK
-      bigint item_id FK
-      string content
-      timestamps
-    }
-
-    ADDRESSES {
-      bigint id PK
-      bigint user_id FK
-      string postal_code
-      string address
-      string building
-      timestamps
-    }
-
-変更履歴（重要点）
-
-2025-08-29: payments テーブルを削除。支払い項目は orders に統合。
-
-2025-08-29: items.condition を 文字列運用に統一（casts から int を外す）
+---

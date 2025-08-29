@@ -13,3 +13,14 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# MySQL data
+docker/mysql/data/
+
+# PHPUnitキャッシュ
+src/.phpunit.cache/
+
+# Node.js modules
+node_modules/
+
+# 環境ファイル
+.env

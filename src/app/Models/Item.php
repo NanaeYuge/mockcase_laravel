@@ -41,9 +41,9 @@ class Item extends Model
         return $this->favorites()->where('user_id', $user->id)->exists();
     }
 
-    public function getConditionLabelAttribute(): string
+    public function getConditionLabelAttribute()
     {
-        return $this->condition ?: '不明';
+    return self::$conditionLabels[$this->condition] ?? '不明';
     }
 
     public function getImageUrlAttribute(): string
@@ -66,4 +66,14 @@ class Item extends Model
 
     public function scopeAvailable($q) { return $q->where('is_sold', false); }
     public function scopeSold($q)      { return $q->where('is_sold', true); }
+
+    public static $conditionLabels = [
+        1 => '新品・未使用',
+        2 => '未使用に近い',
+        3 => '目立った傷や汚れなし',
+        4 => 'やや傷や汚れあり',
+        5 => '傷や汚れあり',
+        6 => '全体的に状態が悪い',
+    ];
+
 }

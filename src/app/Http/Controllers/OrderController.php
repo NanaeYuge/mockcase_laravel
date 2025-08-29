@@ -10,6 +10,7 @@ use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Stripe\Webhook as StripeWebhook;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 
 class OrderController extends Controller
@@ -69,38 +70,32 @@ class OrderController extends Controller
     public function store(Request $request, int $id)
 {
     $validated = $request->validate([
-        'payment_method' => 'required|in:クレジットカード,コンビニ払い,銀行振込',
+        'payment_method' => 'required|in:クレジットカード,コンビニ払い',
     ]);
 
-    // 競合防止
     DB::transaction(function () use ($id, $validated) {
         $item = Item::where('id', $id)->lockForUpdate()->firstOrFail();
-        if ((int)$item->is_sold === 1) {
+
+        if (property_exists($item, 'is_sold') && (int) $item->is_sold === 1) {
             abort(409, 'この商品はすでに購入されています。');
         }
 
-        // 注文レコードを作成
-        $order = Order::create([
+        Order::create([
             'user_id'        => Auth::id(),
             'item_id'        => $item->id,
-            'price'          => $item->price,
+            'total_amount'   => $item->price,
             'payment_method' => $validated['payment_method'],
-            'status'         => '処理中',
-            'payment_status' => 'pending',
+            'shipping_address' => Auth::user()->address ?? null,
+            'status'         => '購入完了',
         ]);
 
-        // 売切反映
-        $item->update(['is_sold' => 1]);
-
+        // 売切フラグ
+        if ($item->isFillable('is_sold')) {
+            $item->update(['is_sold' => 1]);
+        }
 
         session()->forget("purchase.{$id}.payment_method");
     });
-
-    $method = $request->payment_method;
-    if ($method === '銀行振込') {
-        return redirect()->route('items.index')
-            ->with('status', 'ご注文を受け付けました（銀行振込）。お支払い案内をご確認ください。');
-    }
 
     return redirect()->route('items.index')
         ->with('success', '購入が完了しました。');
