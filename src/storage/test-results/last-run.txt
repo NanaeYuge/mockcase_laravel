@@ -1,0 +1,3037 @@
+PHPUnit Started (PHPUnit 10.5.48 using PHP 8.2.29 (cli) on Linux)
+Test Runner Configured
+Bootstrap Finished (/var/www/vendor/autoload.php)
+Test Suite Loaded (55 tests)
+Event Facade Sealed
+Test Runner Started
+Test Suite Sorted
+Test Runner Execution Started (55 tests)
+Test Suite Started (/var/www/phpunit.xml, 55 tests)
+Test Suite Started (Unit, 1 test)
+Test Suite Started (Tests\Unit\ExampleTest, 1 test)
+Test Preparation Started (Tests\Unit\ExampleTest::test_example)
+Test Prepared (Tests\Unit\ExampleTest::test_example)
+Assertion Succeeded (Constraint: is true, Value: true)
+Test Passed (Tests\Unit\ExampleTest::test_example)
+Test Finished (Tests\Unit\ExampleTest::test_example)
+Test Suite Finished (Tests\Unit\ExampleTest, 1 test)
+Test Suite Finished (Unit, 1 test)
+Test Suite Started (Feature, 54 tests)
+Test Suite Started (Tests\Feature\AuthTest, 5 tests)
+Test Preparation Started (Tests\Feature\AuthTest::test_login_email_required)
+Before Test Method Called (Tests\Feature\AuthTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\AuthTest::setUp
+Test Prepared (Tests\Feature\AuthTest::test_login_email_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: email)
+Test Passed (Tests\Feature\AuthTest::test_login_email_required)
+After Test Method Called (Tests\Feature\AuthTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\AuthTest::tearDown
+Test Finished (Tests\Feature\AuthTest::test_login_email_required)
+Test Preparation Started (Tests\Feature\AuthTest::test_login_password_required)
+Before Test Method Called (Tests\Feature\AuthTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\AuthTest::setUp
+Test Prepared (Tests\Feature\AuthTest::test_login_password_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: password)
+Test Passed (Tests\Feature\AuthTest::test_login_password_required)
+After Test Method Called (Tests\Feature\AuthTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\AuthTest::tearDown
+Test Finished (Tests\Feature\AuthTest::test_login_password_required)
+Test Preparation Started (Tests\Feature\AuthTest::test_login_invalid_credentials)
+Before Test Method Called (Tests\Feature\AuthTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\AuthTest::setUp
+Test Prepared (Tests\Feature\AuthTest::test_login_invalid_credentials)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is false, Value: false)
+Test Passed (Tests\Feature\AuthTest::test_login_invalid_credentials)
+After Test Method Called (Tests\Feature\AuthTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\AuthTest::tearDown
+Test Finished (Tests\Feature\AuthTest::test_login_invalid_credentials)
+Test Preparation Started (Tests\Feature\AuthTest::test_login_success)
+Before Test Method Called (Tests\Feature\AuthTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\AuthTest::setUp
+Test Prepared (Tests\Feature\AuthTest::test_login_success)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost', Value: 'http://localhost')
+Assertion Succeeded (Constraint: is true, Value: true)
+Test Passed (Tests\Feature\AuthTest::test_login_success)
+After Test Method Called (Tests\Feature\AuthTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\AuthTest::tearDown
+Test Finished (Tests\Feature\AuthTest::test_login_success)
+Test Preparation Started (Tests\Feature\AuthTest::test_logout)
+Before Test Method Called (Tests\Feature\AuthTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\AuthTest::setUp
+Test Prepared (Tests\Feature\AuthTest::test_logout)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost', Value: 'http://localhost')
+Assertion Succeeded (Constraint: is false, Value: false)
+Test Passed (Tests\Feature\AuthTest::test_logout)
+After Test Method Called (Tests\Feature\AuthTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\AuthTest::tearDown
+Test Finished (Tests\Feature\AuthTest::test_logout)
+After Last Test Method Called (Tests\Feature\AuthTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\AuthTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\AuthTest, 5 tests)
+Test Suite Started (Tests\Feature\CommentAccessTest, 3 tests)
+Test Preparation Started (Tests\Feature\CommentAccessTest::test_guest_cannot_post_comment)
+Before Test Method Called (Tests\Feature\CommentAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentAccessTest::setUp
+Test Prepared (Tests\Feature\CommentAccessTest::test_guest_cannot_post_comment)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Test Passed (Tests\Feature\CommentAccessTest::test_guest_cannot_post_comment)
+After Test Method Called (Tests\Feature\CommentAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentAccessTest::tearDown
+Test Finished (Tests\Feature\CommentAccessTest::test_guest_cannot_post_comment)
+Test Preparation Started (Tests\Feature\CommentAccessTest::test_logged_in_user_can_post_comment)
+Before Test Method Called (Tests\Feature\CommentAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentAccessTest::setUp
+Test Prepared (Tests\Feature\CommentAccessTest::test_logged_in_user_can_post_comment)
+Assertion Failed (Constraint: is identical to 200, Value: 302, Message: Expected response status code [200] but received 302.)
+Test Failed (Tests\Feature\CommentAccessTest::test_logged_in_user_can_post_comment)
+Expected response status code [200] but received 302.
+Failed asserting that 302 is identical to 200.
+After Test Method Called (Tests\Feature\CommentAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentAccessTest::tearDown
+Test Finished (Tests\Feature\CommentAccessTest::test_logged_in_user_can_post_comment)
+Test Preparation Started (Tests\Feature\CommentAccessTest::test_comment_validation)
+Before Test Method Called (Tests\Feature\CommentAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentAccessTest::setUp
+Test Prepared (Tests\Feature\CommentAccessTest::test_comment_validation)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/items/3', Value: 'http://localhost/items/3')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'content', Value: Array &0 [
+    'content' => Array &1 [
+        0 => 'The content field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'content'
+
+Response has the following validation errors in the session:
+
+{
+    "content": [
+        "The content field is required."
+    ]
+}
+)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/items/3', Value: 'http://localhost/items/3')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'content', Value: Array &0 [
+    'content' => Array &1 [
+        0 => 'The content must not be greater than 255 characters.',
+    ],
+], Message: Failed to find a validation error in session for key: 'content'
+
+Response has the following validation errors in the session:
+
+{
+    "content": [
+        "The content must not be greater than 255 characters."
+    ]
+}
+)
+Test Passed (Tests\Feature\CommentAccessTest::test_comment_validation)
+After Test Method Called (Tests\Feature\CommentAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentAccessTest::tearDown
+Test Finished (Tests\Feature\CommentAccessTest::test_comment_validation)
+After Last Test Method Called (Tests\Feature\CommentAccessTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\CommentAccessTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\CommentAccessTest, 3 tests)
+Test Suite Started (Tests\Feature\CommentTest, 4 tests)
+Test Preparation Started (Tests\Feature\CommentTest::test_guest_cannot_post_comment)
+Before Test Method Called (Tests\Feature\CommentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentTest::setUp
+Test Prepared (Tests\Feature\CommentTest::test_guest_cannot_post_comment)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Assertion Succeeded (Constraint: Illuminate\Testing\Constraints\CountInDatabase, Value: 'comments')
+Test Passed (Tests\Feature\CommentTest::test_guest_cannot_post_comment)
+After Test Method Called (Tests\Feature\CommentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentTest::tearDown
+Test Finished (Tests\Feature\CommentTest::test_guest_cannot_post_comment)
+Test Preparation Started (Tests\Feature\CommentTest::test_comment_required_validation)
+Before Test Method Called (Tests\Feature\CommentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentTest::setUp
+Test Prepared (Tests\Feature\CommentTest::test_comment_required_validation)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: content)
+Test Passed (Tests\Feature\CommentTest::test_comment_required_validation)
+After Test Method Called (Tests\Feature\CommentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentTest::tearDown
+Test Finished (Tests\Feature\CommentTest::test_comment_required_validation)
+Test Preparation Started (Tests\Feature\CommentTest::test_comment_max_255_validation)
+Before Test Method Called (Tests\Feature\CommentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentTest::setUp
+Test Prepared (Tests\Feature\CommentTest::test_comment_max_255_validation)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: content)
+Test Passed (Tests\Feature\CommentTest::test_comment_max_255_validation)
+After Test Method Called (Tests\Feature\CommentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentTest::tearDown
+Test Finished (Tests\Feature\CommentTest::test_comment_max_255_validation)
+Test Preparation Started (Tests\Feature\CommentTest::test_comment_success)
+Before Test Method Called (Tests\Feature\CommentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\CommentTest::setUp
+Test Prepared (Tests\Feature\CommentTest::test_comment_success)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: {"item_id":7,"user_id":13,"content":"\u8cb7\u3044\u305f\u3044\u3067\u3059"}, Value: 'comments')
+Test Passed (Tests\Feature\CommentTest::test_comment_success)
+After Test Method Called (Tests\Feature\CommentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\CommentTest::tearDown
+Test Finished (Tests\Feature\CommentTest::test_comment_success)
+After Last Test Method Called (Tests\Feature\CommentTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\CommentTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\CommentTest, 4 tests)
+Test Suite Started (Tests\Feature\ExampleTest, 1 test)
+Test Preparation Started (Tests\Feature\ExampleTest::test_example)
+Before Test Method Called (Tests\Feature\ExampleTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ExampleTest::setUp
+Test Prepared (Tests\Feature\ExampleTest::test_example)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Test Passed (Tests\Feature\ExampleTest::test_example)
+After Test Method Called (Tests\Feature\ExampleTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ExampleTest::tearDown
+Test Finished (Tests\Feature\ExampleTest::test_example)
+After Last Test Method Called (Tests\Feature\ExampleTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ExampleTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ExampleTest, 1 test)
+Test Suite Started (Tests\Feature\FavoriteAccessTest, 3 tests)
+Test Preparation Started (Tests\Feature\FavoriteAccessTest::test_guest_cannot_favorite)
+Before Test Method Called (Tests\Feature\FavoriteAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::setUp
+Test Prepared (Tests\Feature\FavoriteAccessTest::test_guest_cannot_favorite)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Test Passed (Tests\Feature\FavoriteAccessTest::test_guest_cannot_favorite)
+After Test Method Called (Tests\Feature\FavoriteAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::tearDown
+Test Finished (Tests\Feature\FavoriteAccessTest::test_guest_cannot_favorite)
+Test Preparation Started (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_favorite)
+Before Test Method Called (Tests\Feature\FavoriteAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::setUp
+Test Prepared (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_favorite)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: {"user_id":16,"item_id":9}, Value: 'favorites')
+Test Passed (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_favorite)
+After Test Method Called (Tests\Feature\FavoriteAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::tearDown
+Test Finished (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_favorite)
+Test Preparation Started (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_unfavorite)
+Before Test Method Called (Tests\Feature\FavoriteAccessTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::setUp
+Test Prepared (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_unfavorite)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: {"user_id":18,"item_id":10}, Value: 'favorites')
+Test Passed (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_unfavorite)
+After Test Method Called (Tests\Feature\FavoriteAccessTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::tearDown
+Test Finished (Tests\Feature\FavoriteAccessTest::test_logged_in_user_can_unfavorite)
+After Last Test Method Called (Tests\Feature\FavoriteAccessTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\FavoriteAccessTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\FavoriteAccessTest, 3 tests)
+Test Suite Started (Tests\Feature\FavoriteTest, 1 test)
+Test Preparation Started (Tests\Feature\FavoriteTest::test_user_can_favorite_and_unfavorite)
+Before Test Method Called (Tests\Feature\FavoriteTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\FavoriteTest::setUp
+Test Prepared (Tests\Feature\FavoriteTest::test_user_can_favorite_and_unfavorite)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: {"user_id":20,"item_id":11}, Value: 'favorites')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: {"user_id":20,"item_id":11}, Value: 'favorites')
+Test Passed (Tests\Feature\FavoriteTest::test_user_can_favorite_and_unfavorite)
+After Test Method Called (Tests\Feature\FavoriteTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\FavoriteTest::tearDown
+Test Finished (Tests\Feature\FavoriteTest::test_user_can_favorite_and_unfavorite)
+After Last Test Method Called (Tests\Feature\FavoriteTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\FavoriteTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\FavoriteTest, 1 test)
+Test Suite Started (Tests\Feature\ItemDetailTest, 1 test)
+Test Preparation Started (Tests\Feature\ItemDetailTest::test_item_detail_shows_required_fields)
+Before Test Method Called (Tests\Feature\ItemDetailTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemDetailTest::setUp
+Test Prepared (Tests\Feature\ItemDetailTest::test_item_detail_shows_required_fields)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\ItemDetailTest::test_item_detail_shows_required_fields)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\ItemDetailTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemDetailTest::tearDown
+Test Finished (Tests\Feature\ItemDetailTest::test_item_detail_shows_required_fields)
+After Last Test Method Called (Tests\Feature\ItemDetailTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemDetailTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemDetailTest, 1 test)
+Test Suite Started (Tests\Feature\ItemsImageFallbackTest, 2 tests)
+Test Preparation Started (Tests\Feature\ItemsImageFallbackTest::test_show_uses_no_image_when_image_path_is_null)
+Before Test Method Called (Tests\Feature\ItemsImageFallbackTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsImageFallbackTest::setUp
+Test Prepared (Tests\Feature\ItemsImageFallbackTest::test_show_uses_no_image_when_image_path_is_null)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\ItemsImageFallbackTest::test_show_uses_no_image_when_image_path_is_null)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\ItemsImageFallbackTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsImageFallbackTest::tearDown
+Test Finished (Tests\Feature\ItemsImageFallbackTest::test_show_uses_no_image_when_image_path_is_null)
+Test Preparation Started (Tests\Feature\ItemsImageFallbackTest::test_index_uses_no_image_when_image_path_is_null)
+Before Test Method Called (Tests\Feature\ItemsImageFallbackTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsImageFallbackTest::setUp
+Test Prepared (Tests\Feature\ItemsImageFallbackTest::test_index_uses_no_image_when_image_path_is_null)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "images/no-image.png" [ASCII](length: 19), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="wt8xErVTzJUj2p31cAYQKi2X2QMUNE51f4IkJ0aR">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/14" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">フォールバック一覧</p>\n
+            <p class="item-price">¥29,727</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "フォールバック一覧" [UTF-8](length: 27), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="wt8xErVTzJUj2p31cAYQKi2X2QMUNE51f4IkJ0aR">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/14" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">フォールバック一覧</p>\n
+            <p class="item-price">¥29,727</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsImageFallbackTest::test_index_uses_no_image_when_image_path_is_null)
+After Test Method Called (Tests\Feature\ItemsImageFallbackTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsImageFallbackTest::tearDown
+Test Finished (Tests\Feature\ItemsImageFallbackTest::test_index_uses_no_image_when_image_path_is_null)
+After Last Test Method Called (Tests\Feature\ItemsImageFallbackTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemsImageFallbackTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemsImageFallbackTest, 2 tests)
+Test Suite Started (Tests\Feature\ItemsIndexTest, 4 tests)
+Test Preparation Started (Tests\Feature\ItemsIndexTest::test_guest_can_view_items_index)
+Before Test Method Called (Tests\Feature\ItemsIndexTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsIndexTest::setUp
+Test Prepared (Tests\Feature\ItemsIndexTest::test_guest_can_view_items_index)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "表示テスト商品" [UTF-8](length: 21), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="i1RVHMQSguZaQaIYT6IvolmN2cwI22mmov8nGWq8">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/15" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">表示テスト商品</p>\n
+            <p class="item-price">¥38,561</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsIndexTest::test_guest_can_view_items_index)
+After Test Method Called (Tests\Feature\ItemsIndexTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsIndexTest::tearDown
+Test Finished (Tests\Feature\ItemsIndexTest::test_guest_can_view_items_index)
+Test Preparation Started (Tests\Feature\ItemsIndexTest::test_guest_does_not_see_favorite_button_on_index)
+Before Test Method Called (Tests\Feature\ItemsIndexTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsIndexTest::setUp
+Test Prepared (Tests\Feature\ItemsIndexTest::test_guest_does_not_see_favorite_button_on_index)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: does not contain "いいね" [UTF-8](length: 9), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="yPoVx1rIHqCQLk0TFFPesVYUXoZBD7EJOqQ0lFgN">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/16" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">vel tempora</p>\n
+            <p class="item-price">¥44,667</p>\n
+        </a>\n
+                <a href="http://localhost/items/17" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">velit aut</p>\n
+            <p class="item-price">¥32,387</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: does not contain "favorite" [ASCII](length: 8), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="yPoVx1rIHqCQLk0TFFPesVYUXoZBD7EJOqQ0lFgN">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/16" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">vel tempora</p>\n
+            <p class="item-price">¥44,667</p>\n
+        </a>\n
+                <a href="http://localhost/items/17" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">velit aut</p>\n
+            <p class="item-price">¥32,387</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsIndexTest::test_guest_does_not_see_favorite_button_on_index)
+After Test Method Called (Tests\Feature\ItemsIndexTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsIndexTest::tearDown
+Test Finished (Tests\Feature\ItemsIndexTest::test_guest_does_not_see_favorite_button_on_index)
+Test Preparation Started (Tests\Feature\ItemsIndexTest::test_index_paginates_seven_per_page)
+Before Test Method Called (Tests\Feature\ItemsIndexTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsIndexTest::setUp
+Test Prepared (Tests\Feature\ItemsIndexTest::test_index_paginates_seven_per_page)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: is identical to 7, Value: 7)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "ITEM8" [ASCII](length: 5), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="MRq6I2RCsvL6601Ggtdx8twsTSz1XkwmpNpJeUqy">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/25" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM8</p>\n
+            <p class="item-price">¥49,445</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">\n
+        <div class="flex justify-between flex-1 sm:hidden">\n
+                            <a href="http://localhost/items?page=1" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300">\n
+                    &laquo; Previous\n
+                </a>\n
+            \n
+                            <span class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md dark:text-gray-600 dark:bg-gray-800 dark:border-gray-600">\n
+                    Next &raquo;\n
+                </span>\n
+                    </div>\n
+\n
+        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">\n
+            <div>\n
+                <p class="text-sm text-gray-700 leading-5 dark:text-gray-400">\n
+                    Showing\n
+                                            <span class="font-medium">8</span>\n
+                        to\n
+                        <span class="font-medium">8</span>\n
+                                        of\n
+                    <span class="font-medium">8</span>\n
+                    results\n
+                </p>\n
+            </div>\n
+\n
+            <div>\n
+                <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">\n
+                    \n
+                                            <a href="http://localhost/items?page=1" rel="prev" class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md leading-5 hover:text-gray-400 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800" aria-label="&amp;laquo; Previous">\n
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">\n
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />\n
+                            </svg>\n
+                        </a>\n
+                    \n
+                    \n
+                                            \n
+                        \n
+                        \n
+                                                                                                                        <a href="http://localhost/items?page=1" class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-500 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800" aria-label="Go to page 1">\n
+                                        1\n
+                                    </a>\n
+                                                                                                                                <span aria-current="page">\n
+                                        <span class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 dark:bg-gray-800 dark:border-gray-600">2</span>\n
+                                    </span>\n
+                                                                                                        \n
+                    \n
+                                            <span aria-disabled="true" aria-label="Next &amp;raquo;">\n
+                            <span class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default rounded-r-md leading-5 dark:bg-gray-800 dark:border-gray-600" aria-hidden="true">\n
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">\n
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />\n
+                                </svg>\n
+                            </span>\n
+                        </span>\n
+                                    </span>\n
+            </div>\n
+        </div>\n
+    </nav>\n
+\n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: does not contain "ITEM8" [ASCII](length: 5), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="MRq6I2RCsvL6601Ggtdx8twsTSz1XkwmpNpJeUqy">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/18" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM1</p>\n
+            <p class="item-price">¥27,933</p>\n
+        </a>\n
+                <a href="http://localhost/items/19" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM2</p>\n
+            <p class="item-price">¥15,372</p>\n
+        </a>\n
+                <a href="http://localhost/items/20" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM3</p>\n
+            <p class="item-price">¥39,829</p>\n
+        </a>\n
+                <a href="http://localhost/items/21" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM4</p>\n
+            <p class="item-price">¥46,463</p>\n
+        </a>\n
+                <a href="http://localhost/items/22" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM5</p>\n
+            <p class="item-price">¥47,696</p>\n
+        </a>\n
+                <a href="http://localhost/items/23" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM6</p>\n
+            <p class="item-price">¥18,783</p>\n
+        </a>\n
+                <a href="http://localhost/items/24" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ITEM7</p>\n
+            <p class="item-price">¥38,371</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">\n
+        <div class="flex justify-between flex-1 sm:hidden">\n
+                            <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md dark:text-gray-600 dark:bg-gray-800 dark:border-gray-600">\n
+                    &laquo; Previous\n
+                </span>\n
+            \n
+                            <a href="http://localhost/items?page=2" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300">\n
+                    Next &raquo;\n
+                </a>\n
+                    </div>\n
+\n
+        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">\n
+            <div>\n
+                <p class="text-sm text-gray-700 leading-5 dark:text-gray-400">\n
+                    Showing\n
+                                            <span class="font-medium">1</span>\n
+                        to\n
+                        <span class="font-medium">7</span>\n
+                                        of\n
+                    <span class="font-medium">8</span>\n
+                    results\n
+                </p>\n
+            </div>\n
+\n
+            <div>\n
+                <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">\n
+                    \n
+                                            <span aria-disabled="true" aria-label="&amp;laquo; Previous">\n
+                            <span class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default rounded-l-md leading-5 dark:bg-gray-800 dark:border-gray-600" aria-hidden="true">\n
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">\n
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />\n
+                                </svg>\n
+                            </span>\n
+                        </span>\n
+                    \n
+                    \n
+                                            \n
+                        \n
+                        \n
+                                                                                                                        <span aria-current="page">\n
+                                        <span class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 dark:bg-gray-800 dark:border-gray-600">1</span>\n
+                                    </span>\n
+                                                                                                                                <a href="http://localhost/items?page=2" class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-500 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800" aria-label="Go to page 2">\n
+                                        2\n
+                                    </a>\n
+                                                                                                        \n
+                    \n
+                                            <a href="http://localhost/items?page=2" rel="next" class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md leading-5 hover:text-gray-400 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800" aria-label="Next &amp;raquo;">\n
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">\n
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />\n
+                            </svg>\n
+                        </a>\n
+                                    </span>\n
+            </div>\n
+        </div>\n
+    </nav>\n
+\n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsIndexTest::test_index_paginates_seven_per_page)
+After Test Method Called (Tests\Feature\ItemsIndexTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsIndexTest::tearDown
+Test Finished (Tests\Feature\ItemsIndexTest::test_index_paginates_seven_per_page)
+Test Preparation Started (Tests\Feature\ItemsIndexTest::test_logged_in_user_sees_index_normally)
+Before Test Method Called (Tests\Feature\ItemsIndexTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsIndexTest::setUp
+Test Prepared (Tests\Feature\ItemsIndexTest::test_logged_in_user_sees_index_normally)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "ログイン時も見える" [UTF-8](length: 27), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="OF7WTxaKPiaRz5hATq3ht9TRmJtyCjom2KeWPoYF">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="OF7WTxaKPiaRz5hATq3ht9TRmJtyCjom2KeWPoYF" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/26" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ログイン時も見える</p>\n
+            <p class="item-price">¥24,942</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsIndexTest::test_logged_in_user_sees_index_normally)
+After Test Method Called (Tests\Feature\ItemsIndexTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsIndexTest::tearDown
+Test Finished (Tests\Feature\ItemsIndexTest::test_logged_in_user_sees_index_normally)
+After Last Test Method Called (Tests\Feature\ItemsIndexTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemsIndexTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemsIndexTest, 4 tests)
+Test Suite Started (Tests\Feature\ItemsSearchFilterTest, 1 test)
+Test Preparation Started (Tests\Feature\ItemsSearchFilterTest::test_search_filters_items_by_keyword)
+Before Test Method Called (Tests\Feature\ItemsSearchFilterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsSearchFilterTest::setUp
+Test Prepared (Tests\Feature\ItemsSearchFilterTest::test_search_filters_items_by_keyword)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "テストABC商品" [UTF-8](length: 18), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="E5M7awqhTTnHzKg67ceUBI45sMNAwnUWExL6ICAM">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="ABC" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=ABC"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=ABC&amp;tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/27" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">テストABC商品</p>\n
+            <p class="item-price">¥6,798</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: does not contain "テストXYZ商品" [UTF-8](length: 18), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="E5M7awqhTTnHzKg67ceUBI45sMNAwnUWExL6ICAM">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="ABC" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=ABC"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=ABC&amp;tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/27" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">テストABC商品</p>\n
+            <p class="item-price">¥6,798</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\ItemsSearchFilterTest::test_search_filters_items_by_keyword)
+After Test Method Called (Tests\Feature\ItemsSearchFilterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsSearchFilterTest::tearDown
+Test Finished (Tests\Feature\ItemsSearchFilterTest::test_search_filters_items_by_keyword)
+After Last Test Method Called (Tests\Feature\ItemsSearchFilterTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemsSearchFilterTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemsSearchFilterTest, 1 test)
+Test Suite Started (Tests\Feature\ItemsShowCategoriesTest, 1 test)
+Test Preparation Started (Tests\Feature\ItemsShowCategoriesTest::test_multiple_categories_are_shown_on_item_detail)
+Before Test Method Called (Tests\Feature\ItemsShowCategoriesTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsShowCategoriesTest::setUp
+Test Prepared (Tests\Feature\ItemsShowCategoriesTest::test_multiple_categories_are_shown_on_item_detail)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\ItemsShowCategoriesTest::test_multiple_categories_are_shown_on_item_detail)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\ItemsShowCategoriesTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsShowCategoriesTest::tearDown
+Test Finished (Tests\Feature\ItemsShowCategoriesTest::test_multiple_categories_are_shown_on_item_detail)
+After Last Test Method Called (Tests\Feature\ItemsShowCategoriesTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemsShowCategoriesTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemsShowCategoriesTest, 1 test)
+Test Suite Started (Tests\Feature\ItemsShowCountsTest, 2 tests)
+Test Preparation Started (Tests\Feature\ItemsShowCountsTest::test_favorite_count_increases_on_detail)
+Before Test Method Called (Tests\Feature\ItemsShowCountsTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsShowCountsTest::setUp
+Test Prepared (Tests\Feature\ItemsShowCountsTest::test_favorite_count_increases_on_detail)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\ItemsShowCountsTest::test_favorite_count_increases_on_detail)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\ItemsShowCountsTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsShowCountsTest::tearDown
+Test Finished (Tests\Feature\ItemsShowCountsTest::test_favorite_count_increases_on_detail)
+Test Preparation Started (Tests\Feature\ItemsShowCountsTest::test_comment_count_increases_on_detail)
+Before Test Method Called (Tests\Feature\ItemsShowCountsTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\ItemsShowCountsTest::setUp
+Test Prepared (Tests\Feature\ItemsShowCountsTest::test_comment_count_increases_on_detail)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\ItemsShowCountsTest::test_comment_count_increases_on_detail)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\ItemsShowCountsTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\ItemsShowCountsTest::tearDown
+Test Finished (Tests\Feature\ItemsShowCountsTest::test_comment_count_increases_on_detail)
+After Last Test Method Called (Tests\Feature\ItemsShowCountsTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\ItemsShowCountsTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\ItemsShowCountsTest, 2 tests)
+Test Suite Started (Tests\Feature\LoginLogoutTest, 4 tests)
+Test Preparation Started (Tests\Feature\LoginLogoutTest::test_login_requires_email_and_password)
+Before Test Method Called (Tests\Feature\LoginLogoutTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\LoginLogoutTest::setUp
+Test Prepared (Tests\Feature\LoginLogoutTest::test_login_requires_email_and_password)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'email', Value: Array &0 [
+    'email' => Array &1 [
+        0 => 'The email field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'email'
+
+Response has the following validation errors in the session:
+
+{
+    "email": [
+        "The email field is required."
+    ]
+}
+)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'password', Value: Array &0 [
+    'password' => Array &1 [
+        0 => 'The password field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'password'
+
+Response has the following validation errors in the session:
+
+{
+    "password": [
+        "The password field is required."
+    ]
+}
+)
+Test Passed (Tests\Feature\LoginLogoutTest::test_login_requires_email_and_password)
+After Test Method Called (Tests\Feature\LoginLogoutTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\LoginLogoutTest::tearDown
+Test Finished (Tests\Feature\LoginLogoutTest::test_login_requires_email_and_password)
+Test Preparation Started (Tests\Feature\LoginLogoutTest::test_login_with_wrong_credentials_shows_error)
+Before Test Method Called (Tests\Feature\LoginLogoutTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\LoginLogoutTest::setUp
+Test Prepared (Tests\Feature\LoginLogoutTest::test_login_with_wrong_credentials_shows_error)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Test Passed (Tests\Feature\LoginLogoutTest::test_login_with_wrong_credentials_shows_error)
+After Test Method Called (Tests\Feature\LoginLogoutTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\LoginLogoutTest::tearDown
+Test Finished (Tests\Feature\LoginLogoutTest::test_login_with_wrong_credentials_shows_error)
+Test Preparation Started (Tests\Feature\LoginLogoutTest::test_login_with_valid_credentials_succeeds)
+Before Test Method Called (Tests\Feature\LoginLogoutTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\LoginLogoutTest::setUp
+Test Prepared (Tests\Feature\LoginLogoutTest::test_login_with_valid_credentials_succeeds)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost', Value: 'http://localhost')
+Assertion Succeeded (Constraint: is not null, Value: {enable export of objects to see this value}, Message: The current user is not authenticated.)
+Assertion Succeeded (Constraint: is an instance of class App\Models\User, Value: {enable export of objects to see this value}, Message: The currently authenticated user is not who was expected)
+Assertion Succeeded (Constraint: is identical to 47, Value: 47, Message: The currently authenticated user is not who was expected)
+Test Passed (Tests\Feature\LoginLogoutTest::test_login_with_valid_credentials_succeeds)
+After Test Method Called (Tests\Feature\LoginLogoutTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\LoginLogoutTest::tearDown
+Test Finished (Tests\Feature\LoginLogoutTest::test_login_with_valid_credentials_succeeds)
+Test Preparation Started (Tests\Feature\LoginLogoutTest::test_logout_succeeds)
+Before Test Method Called (Tests\Feature\LoginLogoutTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\LoginLogoutTest::setUp
+Test Prepared (Tests\Feature\LoginLogoutTest::test_logout_succeeds)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost', Value: 'http://localhost')
+Assertion Succeeded (Constraint: is false, Value: false, Message: The user is authenticated)
+Test Passed (Tests\Feature\LoginLogoutTest::test_logout_succeeds)
+After Test Method Called (Tests\Feature\LoginLogoutTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\LoginLogoutTest::tearDown
+Test Finished (Tests\Feature\LoginLogoutTest::test_logout_succeeds)
+After Last Test Method Called (Tests\Feature\LoginLogoutTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\LoginLogoutTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\LoginLogoutTest, 4 tests)
+Test Suite Started (Tests\Feature\MylistPaginationTest, 1 test)
+Test Preparation Started (Tests\Feature\MylistPaginationTest::test_mylist_paginates_seven_per_page)
+Before Test Method Called (Tests\Feature\MylistPaginationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\MylistPaginationTest::setUp
+Test Prepared (Tests\Feature\MylistPaginationTest::test_mylist_paginates_seven_per_page)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: is identical to 7, Value: 7)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: is identical to 7, Value: 7)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: is identical to 6, Value: 6)
+Test Passed (Tests\Feature\MylistPaginationTest::test_mylist_paginates_seven_per_page)
+After Test Method Called (Tests\Feature\MylistPaginationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\MylistPaginationTest::tearDown
+Test Finished (Tests\Feature\MylistPaginationTest::test_mylist_paginates_seven_per_page)
+After Last Test Method Called (Tests\Feature\MylistPaginationTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\MylistPaginationTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\MylistPaginationTest, 1 test)
+Test Suite Started (Tests\Feature\PurchaseButtonVisibilityTest, 2 tests)
+Test Preparation Started (Tests\Feature\PurchaseButtonVisibilityTest::test_guest_sees_button_but_redirects_to_login_when_click)
+Before Test Method Called (Tests\Feature\PurchaseButtonVisibilityTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchaseButtonVisibilityTest::setUp
+Test Prepared (Tests\Feature\PurchaseButtonVisibilityTest::test_guest_sees_button_but_redirects_to_login_when_click)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\PurchaseButtonVisibilityTest::test_guest_sees_button_but_redirects_to_login_when_click)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\PurchaseButtonVisibilityTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchaseButtonVisibilityTest::tearDown
+Test Finished (Tests\Feature\PurchaseButtonVisibilityTest::test_guest_sees_button_but_redirects_to_login_when_click)
+Test Preparation Started (Tests\Feature\PurchaseButtonVisibilityTest::test_logged_in_user_can_see_and_access_purchase_page)
+Before Test Method Called (Tests\Feature\PurchaseButtonVisibilityTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchaseButtonVisibilityTest::setUp
+Test Prepared (Tests\Feature\PurchaseButtonVisibilityTest::test_logged_in_user_can_see_and_access_purchase_page)
+Assertion Failed (Constraint: is identical to 200, Value: 500, Message: Expected response status code [200] but received 500.)
+Test Failed (Tests\Feature\PurchaseButtonVisibilityTest::test_logged_in_user_can_see_and_access_purchase_page)
+Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+After Test Method Called (Tests\Feature\PurchaseButtonVisibilityTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchaseButtonVisibilityTest::tearDown
+Test Finished (Tests\Feature\PurchaseButtonVisibilityTest::test_logged_in_user_can_see_and_access_purchase_page)
+After Last Test Method Called (Tests\Feature\PurchaseButtonVisibilityTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\PurchaseButtonVisibilityTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\PurchaseButtonVisibilityTest, 2 tests)
+Test Suite Started (Tests\Feature\PurchasePageContentTest, 2 tests)
+Test Preparation Started (Tests\Feature\PurchasePageContentTest::test_purchase_page_displays_key_content_for_logged_in_user)
+Before Test Method Called (Tests\Feature\PurchasePageContentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchasePageContentTest::setUp
+Test Prepared (Tests\Feature\PurchasePageContentTest::test_purchase_page_displays_key_content_for_logged_in_user)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "支払い方法" [UTF-8](length: 15), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/orders/create.css">\n
+\n
+<div class="purchase-wrapper">\n
+    \n
+    <div class="purchase-left">\n
+        \n
+        <div class="item-header">\n
+            <div class="item-image-box">\n
+                <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+            </div>\n
+        <div class="item-info">\n
+            <h2>quis eligendi</h2>\n
+                <p class="price">¥13,421 <span class="tax">（税込）</span></p>\n
+        </div>\n
+    </div>\n
+\n
+\n
+        \n
+        <div class="section">\n
+            <h3>支払い方法</h3>\n
+            <form method="POST" action="http://localhost/purchase/54">\n
+                <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                <select name="payment_method" required>\n
+                    <option value="">選択してください</option>\n
+                    <option value="クレジットカード">クレジットカード</option>\n
+                    <option value="コンビニ払い">コンビニ払い</option>\n
+                </select>\n
+\n
+                \n
+                <div class="section">\n
+                    <h3>配送先</h3>\n
+                                            <p>\n
+                            〒<br>\n
+                             \n
+                        </p>\n
+\n
+                    \n
+                    <a href="http://localhost/purchase/address/54" class="edit-link">変更する</a>\n
+                </div>\n
+\n
+                \n
+                <div class="summary-box mobile-only">\n
+                    <p>商品代金：<strong>¥13,421</strong></p>\n
+                    <p>支払い方法：未選択</p>\n
+                    <button type="submit" class="purchase-button">購入する</button>\n
+                </div>\n
+            </form>\n
+        </div>\n
+    </div>\n
+\n
+    \n
+    <div class="purchase-right">\n
+        <div class="summary-box">\n
+            <p><strong>商品代金</strong><br>¥13,421</p>\n
+        </div>\n
+        <div class="summary-box">\n
+            <p><strong>支払い方法</strong><br><span id="selected-method">未選択</span></p>\n
+        </div>\n
+        <form method="POST" action="http://localhost/purchase/54">\n
+            <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">            <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">\n
+            <button type="submit" class="purchase-button">購入する</button>\n
+        </form>\n
+    </div>\n
+\n
+    \n
+    <script>\n
+        const select = document.getElementById('payment_method');\n
+        const display = document.getElementById('selected-method');\n
+        const hiddenInput = document.getElementById('payment_method_hidden');\n
+\n
+            select.addEventListener('change', function() {\n
+            display.textContent = this.value || '未選択';\n
+            hiddenInput.value = this.value;\n
+        });\n
+    </script>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "配送先" [UTF-8](length: 9), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/orders/create.css">\n
+\n
+<div class="purchase-wrapper">\n
+    \n
+    <div class="purchase-left">\n
+        \n
+        <div class="item-header">\n
+            <div class="item-image-box">\n
+                <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+            </div>\n
+        <div class="item-info">\n
+            <h2>quis eligendi</h2>\n
+                <p class="price">¥13,421 <span class="tax">（税込）</span></p>\n
+        </div>\n
+    </div>\n
+\n
+\n
+        \n
+        <div class="section">\n
+            <h3>支払い方法</h3>\n
+            <form method="POST" action="http://localhost/purchase/54">\n
+                <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                <select name="payment_method" required>\n
+                    <option value="">選択してください</option>\n
+                    <option value="クレジットカード">クレジットカード</option>\n
+                    <option value="コンビニ払い">コンビニ払い</option>\n
+                </select>\n
+\n
+                \n
+                <div class="section">\n
+                    <h3>配送先</h3>\n
+                                            <p>\n
+                            〒<br>\n
+                             \n
+                        </p>\n
+\n
+                    \n
+                    <a href="http://localhost/purchase/address/54" class="edit-link">変更する</a>\n
+                </div>\n
+\n
+                \n
+                <div class="summary-box mobile-only">\n
+                    <p>商品代金：<strong>¥13,421</strong></p>\n
+                    <p>支払い方法：未選択</p>\n
+                    <button type="submit" class="purchase-button">購入する</button>\n
+                </div>\n
+            </form>\n
+        </div>\n
+    </div>\n
+\n
+    \n
+    <div class="purchase-right">\n
+        <div class="summary-box">\n
+            <p><strong>商品代金</strong><br>¥13,421</p>\n
+        </div>\n
+        <div class="summary-box">\n
+            <p><strong>支払い方法</strong><br><span id="selected-method">未選択</span></p>\n
+        </div>\n
+        <form method="POST" action="http://localhost/purchase/54">\n
+            <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">            <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">\n
+            <button type="submit" class="purchase-button">購入する</button>\n
+        </form>\n
+    </div>\n
+\n
+    \n
+    <script>\n
+        const select = document.getElementById('payment_method');\n
+        const display = document.getElementById('selected-method');\n
+        const hiddenInput = document.getElementById('payment_method_hidden');\n
+\n
+            select.addEventListener('change', function() {\n
+            display.textContent = this.value || '未選択';\n
+            hiddenInput.value = this.value;\n
+        });\n
+    </script>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "購入する" [UTF-8](length: 12), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/orders/create.css">\n
+\n
+<div class="purchase-wrapper">\n
+    \n
+    <div class="purchase-left">\n
+        \n
+        <div class="item-header">\n
+            <div class="item-image-box">\n
+                <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+            </div>\n
+        <div class="item-info">\n
+            <h2>quis eligendi</h2>\n
+                <p class="price">¥13,421 <span class="tax">（税込）</span></p>\n
+        </div>\n
+    </div>\n
+\n
+\n
+        \n
+        <div class="section">\n
+            <h3>支払い方法</h3>\n
+            <form method="POST" action="http://localhost/purchase/54">\n
+                <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                <select name="payment_method" required>\n
+                    <option value="">選択してください</option>\n
+                    <option value="クレジットカード">クレジットカード</option>\n
+                    <option value="コンビニ払い">コンビニ払い</option>\n
+                </select>\n
+\n
+                \n
+                <div class="section">\n
+                    <h3>配送先</h3>\n
+                                            <p>\n
+                            〒<br>\n
+                             \n
+                        </p>\n
+\n
+                    \n
+                    <a href="http://localhost/purchase/address/54" class="edit-link">変更する</a>\n
+                </div>\n
+\n
+                \n
+                <div class="summary-box mobile-only">\n
+                    <p>商品代金：<strong>¥13,421</strong></p>\n
+                    <p>支払い方法：未選択</p>\n
+                    <button type="submit" class="purchase-button">購入する</button>\n
+                </div>\n
+            </form>\n
+        </div>\n
+    </div>\n
+\n
+    \n
+    <div class="purchase-right">\n
+        <div class="summary-box">\n
+            <p><strong>商品代金</strong><br>¥13,421</p>\n
+        </div>\n
+        <div class="summary-box">\n
+            <p><strong>支払い方法</strong><br><span id="selected-method">未選択</span></p>\n
+        </div>\n
+        <form method="POST" action="http://localhost/purchase/54">\n
+            <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">            <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">\n
+            <button type="submit" class="purchase-button">購入する</button>\n
+        </form>\n
+    </div>\n
+\n
+    \n
+    <script>\n
+        const select = document.getElementById('payment_method');\n
+        const display = document.getElementById('selected-method');\n
+        const hiddenInput = document.getElementById('payment_method_hidden');\n
+\n
+            select.addEventListener('change', function() {\n
+            display.textContent = this.value || '未選択';\n
+            hiddenInput.value = this.value;\n
+        });\n
+    </script>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "quis eligendi" [ASCII](length: 13), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/orders/create.css">\n
+\n
+<div class="purchase-wrapper">\n
+    \n
+    <div class="purchase-left">\n
+        \n
+        <div class="item-header">\n
+            <div class="item-image-box">\n
+                <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+            </div>\n
+        <div class="item-info">\n
+            <h2>quis eligendi</h2>\n
+                <p class="price">¥13,421 <span class="tax">（税込）</span></p>\n
+        </div>\n
+    </div>\n
+\n
+\n
+        \n
+        <div class="section">\n
+            <h3>支払い方法</h3>\n
+            <form method="POST" action="http://localhost/purchase/54">\n
+                <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">                <select name="payment_method" required>\n
+                    <option value="">選択してください</option>\n
+                    <option value="クレジットカード">クレジットカード</option>\n
+                    <option value="コンビニ払い">コンビニ払い</option>\n
+                </select>\n
+\n
+                \n
+                <div class="section">\n
+                    <h3>配送先</h3>\n
+                                            <p>\n
+                            〒<br>\n
+                             \n
+                        </p>\n
+\n
+                    \n
+                    <a href="http://localhost/purchase/address/54" class="edit-link">変更する</a>\n
+                </div>\n
+\n
+                \n
+                <div class="summary-box mobile-only">\n
+                    <p>商品代金：<strong>¥13,421</strong></p>\n
+                    <p>支払い方法：未選択</p>\n
+                    <button type="submit" class="purchase-button">購入する</button>\n
+                </div>\n
+            </form>\n
+        </div>\n
+    </div>\n
+\n
+    \n
+    <div class="purchase-right">\n
+        <div class="summary-box">\n
+            <p><strong>商品代金</strong><br>¥13,421</p>\n
+        </div>\n
+        <div class="summary-box">\n
+            <p><strong>支払い方法</strong><br><span id="selected-method">未選択</span></p>\n
+        </div>\n
+        <form method="POST" action="http://localhost/purchase/54">\n
+            <input type="hidden" name="_token" value="jvHg5n9uKmmnB1hYtN5MD9sfQ2iyNW2Uua1HgNfL" autocomplete="off">            <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">\n
+            <button type="submit" class="purchase-button">購入する</button>\n
+        </form>\n
+    </div>\n
+\n
+    \n
+    <script>\n
+        const select = document.getElementById('payment_method');\n
+        const display = document.getElementById('selected-method');\n
+        const hiddenInput = document.getElementById('payment_method_hidden');\n
+\n
+            select.addEventListener('change', function() {\n
+            display.textContent = this.value || '未選択';\n
+            hiddenInput.value = this.value;\n
+        });\n
+    </script>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\PurchasePageContentTest::test_purchase_page_displays_key_content_for_logged_in_user)
+After Test Method Called (Tests\Feature\PurchasePageContentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchasePageContentTest::tearDown
+Test Finished (Tests\Feature\PurchasePageContentTest::test_purchase_page_displays_key_content_for_logged_in_user)
+Test Preparation Started (Tests\Feature\PurchasePageContentTest::test_guest_is_redirected_to_login_when_accessing_purchase_page)
+Before Test Method Called (Tests\Feature\PurchasePageContentTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchasePageContentTest::setUp
+Test Prepared (Tests\Feature\PurchasePageContentTest::test_guest_is_redirected_to_login_when_accessing_purchase_page)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/login', Value: 'http://localhost/login')
+Test Passed (Tests\Feature\PurchasePageContentTest::test_guest_is_redirected_to_login_when_accessing_purchase_page)
+After Test Method Called (Tests\Feature\PurchasePageContentTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchasePageContentTest::tearDown
+Test Finished (Tests\Feature\PurchasePageContentTest::test_guest_is_redirected_to_login_when_accessing_purchase_page)
+After Last Test Method Called (Tests\Feature\PurchasePageContentTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\PurchasePageContentTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\PurchasePageContentTest, 2 tests)
+Test Suite Started (Tests\Feature\PurchasePostValidationTest, 2 tests)
+Test Preparation Started (Tests\Feature\PurchasePostValidationTest::test_payment_method_is_required)
+Before Test Method Called (Tests\Feature\PurchasePostValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchasePostValidationTest::setUp
+Test Prepared (Tests\Feature\PurchasePostValidationTest::test_payment_method_is_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/purchase/56', Value: 'http://localhost/purchase/56')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'payment_method', Value: Array &0 [
+    'item_id' => Array &1 [
+        0 => 'The item id field is required.',
+    ],
+    'payment_method' => Array &2 [
+        0 => 'The payment method field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'payment_method'
+
+Response has the following validation errors in the session:
+
+{
+    "item_id": [
+        "The item id field is required."
+    ],
+    "payment_method": [
+        "The payment method field is required."
+    ]
+}
+)
+Test Passed (Tests\Feature\PurchasePostValidationTest::test_payment_method_is_required)
+After Test Method Called (Tests\Feature\PurchasePostValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchasePostValidationTest::tearDown
+Test Finished (Tests\Feature\PurchasePostValidationTest::test_payment_method_is_required)
+Test Preparation Started (Tests\Feature\PurchasePostValidationTest::test_purchase_post_success_with_valid_payment_method)
+Before Test Method Called (Tests\Feature\PurchasePostValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\PurchasePostValidationTest::setUp
+Test Prepared (Tests\Feature\PurchasePostValidationTest::test_purchase_post_success_with_valid_payment_method)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Test Passed (Tests\Feature\PurchasePostValidationTest::test_purchase_post_success_with_valid_payment_method)
+After Test Method Called (Tests\Feature\PurchasePostValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\PurchasePostValidationTest::tearDown
+Test Finished (Tests\Feature\PurchasePostValidationTest::test_purchase_post_success_with_valid_payment_method)
+After Last Test Method Called (Tests\Feature\PurchasePostValidationTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\PurchasePostValidationTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\PurchasePostValidationTest, 2 tests)
+Test Suite Started (Tests\Feature\RegisterTest, 6 tests)
+Test Preparation Started (Tests\Feature\RegisterTest::test_name_required)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_name_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: name)
+Test Passed (Tests\Feature\RegisterTest::test_name_required)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_name_required)
+Test Preparation Started (Tests\Feature\RegisterTest::test_email_required)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_email_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: email)
+Test Passed (Tests\Feature\RegisterTest::test_email_required)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_email_required)
+Test Preparation Started (Tests\Feature\RegisterTest::test_password_required)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_password_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: password)
+Test Passed (Tests\Feature\RegisterTest::test_password_required)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_password_required)
+Test Preparation Started (Tests\Feature\RegisterTest::test_password_min_8)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_password_min_8)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: password)
+Test Passed (Tests\Feature\RegisterTest::test_password_min_8)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_password_min_8)
+Test Preparation Started (Tests\Feature\RegisterTest::test_password_confirmation_must_match)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_password_confirmation_must_match)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session missing error: password)
+Test Passed (Tests\Feature\RegisterTest::test_password_confirmation_must_match)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_password_confirmation_must_match)
+Test Preparation Started (Tests\Feature\RegisterTest::test_register_success)
+Before Test Method Called (Tests\Feature\RegisterTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterTest::setUp
+Test Prepared (Tests\Feature\RegisterTest::test_register_success)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/email/verify', Value: 'http://localhost/email/verify')
+Assertion Succeeded (Constraint: {"email":"a@example.com"}, Value: 'users')
+Assertion Succeeded (Constraint: is true, Value: true, Message: The user is not authenticated)
+Test Passed (Tests\Feature\RegisterTest::test_register_success)
+After Test Method Called (Tests\Feature\RegisterTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterTest::tearDown
+Test Finished (Tests\Feature\RegisterTest::test_register_success)
+After Last Test Method Called (Tests\Feature\RegisterTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\RegisterTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\RegisterTest, 6 tests)
+Test Suite Started (Tests\Feature\RegisterValidationTest, 4 tests)
+Test Preparation Started (Tests\Feature\RegisterValidationTest::test_name_is_required)
+Before Test Method Called (Tests\Feature\RegisterValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterValidationTest::setUp
+Test Prepared (Tests\Feature\RegisterValidationTest::test_name_is_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/register', Value: 'http://localhost/register')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'name', Value: Array &0 [
+    'name' => Array &1 [
+        0 => 'The name field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'name'
+
+Response has the following validation errors in the session:
+
+{
+    "name": [
+        "The name field is required."
+    ]
+}
+)
+Test Passed (Tests\Feature\RegisterValidationTest::test_name_is_required)
+After Test Method Called (Tests\Feature\RegisterValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterValidationTest::tearDown
+Test Finished (Tests\Feature\RegisterValidationTest::test_name_is_required)
+Test Preparation Started (Tests\Feature\RegisterValidationTest::test_email_is_required)
+Before Test Method Called (Tests\Feature\RegisterValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterValidationTest::setUp
+Test Prepared (Tests\Feature\RegisterValidationTest::test_email_is_required)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/register', Value: 'http://localhost/register')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'email', Value: Array &0 [
+    'email' => Array &1 [
+        0 => 'The email field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'email'
+
+Response has the following validation errors in the session:
+
+{
+    "email": [
+        "The email field is required."
+    ]
+}
+)
+Test Passed (Tests\Feature\RegisterValidationTest::test_email_is_required)
+After Test Method Called (Tests\Feature\RegisterValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterValidationTest::tearDown
+Test Finished (Tests\Feature\RegisterValidationTest::test_email_is_required)
+Test Preparation Started (Tests\Feature\RegisterValidationTest::test_password_is_required_and_min_8_and_confirmed)
+Before Test Method Called (Tests\Feature\RegisterValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterValidationTest::setUp
+Test Prepared (Tests\Feature\RegisterValidationTest::test_password_is_required_and_min_8_and_confirmed)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/register', Value: 'http://localhost/register')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'password', Value: Array &0 [
+    'password' => Array &1 [
+        0 => 'The password field is required.',
+    ],
+], Message: Failed to find a validation error in session for key: 'password'
+
+Response has the following validation errors in the session:
+
+{
+    "password": [
+        "The password field is required."
+    ]
+}
+)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/register', Value: 'http://localhost/register')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'password', Value: Array &0 [
+    'password' => Array &1 [
+        0 => 'The password must be at least 8 characters.',
+    ],
+], Message: Failed to find a validation error in session for key: 'password'
+
+Response has the following validation errors in the session:
+
+{
+    "password": [
+        "The password must be at least 8 characters."
+    ]
+}
+)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/register', Value: 'http://localhost/register')
+Assertion Succeeded (Constraint: is true, Value: true, Message: Session is missing expected key [errors].)
+Assertion Succeeded (Constraint: has the key 'password', Value: Array &0 [
+    'password' => Array &1 [
+        0 => 'The password confirmation does not match.',
+    ],
+], Message: Failed to find a validation error in session for key: 'password'
+
+Response has the following validation errors in the session:
+
+{
+    "password": [
+        "The password confirmation does not match."
+    ]
+}
+)
+Test Passed (Tests\Feature\RegisterValidationTest::test_password_is_required_and_min_8_and_confirmed)
+After Test Method Called (Tests\Feature\RegisterValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterValidationTest::tearDown
+Test Finished (Tests\Feature\RegisterValidationTest::test_password_is_required_and_min_8_and_confirmed)
+Test Preparation Started (Tests\Feature\RegisterValidationTest::test_success_register_redirects_to_login)
+Before Test Method Called (Tests\Feature\RegisterValidationTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\RegisterValidationTest::setUp
+Test Prepared (Tests\Feature\RegisterValidationTest::test_success_register_redirects_to_login)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is equal to 'http://localhost/email/verify', Value: 'http://localhost/email/verify')
+Assertion Succeeded (Constraint: {"email":"ok@example.com"}, Value: 'users')
+Test Passed (Tests\Feature\RegisterValidationTest::test_success_register_redirects_to_login)
+After Test Method Called (Tests\Feature\RegisterValidationTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\RegisterValidationTest::tearDown
+Test Finished (Tests\Feature\RegisterValidationTest::test_success_register_redirects_to_login)
+After Last Test Method Called (Tests\Feature\RegisterValidationTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\RegisterValidationTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\RegisterValidationTest, 4 tests)
+Test Suite Started (Tests\Feature\SearchStateKeepTest, 1 test)
+Test Preparation Started (Tests\Feature\SearchStateKeepTest::test_keyword_kept_when_switching_to_mylist_tab)
+Before Test Method Called (Tests\Feature\SearchStateKeepTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\SearchStateKeepTest::setUp
+Test Prepared (Tests\Feature\SearchStateKeepTest::test_keyword_kept_when_switching_to_mylist_tab)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "ABCノート" [UTF-8](length: 12), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="L8QKg8nv0QNxwFunlbTqohwaLFcefPBn4lXpqYLg">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="ABC" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="L8QKg8nv0QNxwFunlbTqohwaLFcefPBn4lXpqYLg" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=ABC"\n
+        class="">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=ABC&amp;tab=mylist"\n
+        class="active">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/58" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ABCノート</p>\n
+            <p class="item-price">¥16,886</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: does not contain "XYZペン" [UTF-8](length: 9), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="L8QKg8nv0QNxwFunlbTqohwaLFcefPBn4lXpqYLg">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="ABC" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="L8QKg8nv0QNxwFunlbTqohwaLFcefPBn4lXpqYLg" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=ABC"\n
+        class="">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=ABC&amp;tab=mylist"\n
+        class="active">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/58" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">ABCノート</p>\n
+            <p class="item-price">¥16,886</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\SearchStateKeepTest::test_keyword_kept_when_switching_to_mylist_tab)
+After Test Method Called (Tests\Feature\SearchStateKeepTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\SearchStateKeepTest::tearDown
+Test Finished (Tests\Feature\SearchStateKeepTest::test_keyword_kept_when_switching_to_mylist_tab)
+After Last Test Method Called (Tests\Feature\SearchStateKeepTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\SearchStateKeepTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\SearchStateKeepTest, 1 test)
+Test Suite Started (Tests\Feature\SearchTest, 2 tests)
+Test Preparation Started (Tests\Feature\SearchTest::test_search_by_name_like)
+Before Test Method Called (Tests\Feature\SearchTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\SearchTest::setUp
+Test Prepared (Tests\Feature\SearchTest::test_search_by_name_like)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "りんごジュース" [UTF-8](length: 21), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="nMHoAiWoF3DhRHtmwyxFIAvsGTxw83GDGmWQQpbu">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="りんご" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=%E3%82%8A%E3%82%93%E3%81%94"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=%E3%82%8A%E3%82%93%E3%81%94&amp;tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/60" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">りんごジュース</p>\n
+            <p class="item-price">¥21,516</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: does not contain "オレンジ" [UTF-8](length: 12), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="nMHoAiWoF3DhRHtmwyxFIAvsGTxw83GDGmWQQpbu">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="りんご" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=%E3%82%8A%E3%82%93%E3%81%94"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=%E3%82%8A%E3%82%93%E3%81%94&amp;tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/60" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">りんごジュース</p>\n
+            <p class="item-price">¥21,516</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\SearchTest::test_search_by_name_like)
+After Test Method Called (Tests\Feature\SearchTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\SearchTest::tearDown
+Test Finished (Tests\Feature\SearchTest::test_search_by_name_like)
+Test Preparation Started (Tests\Feature\SearchTest::test_keyword_is_kept_on_mylist_tab)
+Before Test Method Called (Tests\Feature\SearchTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\SearchTest::setUp
+Test Prepared (Tests\Feature\SearchTest::test_keyword_is_kept_on_mylist_tab)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "テスト" [UTF-8](length: 9), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="4yeXdEGfUQpX5SLNoKK0JDyJjn8WCVH0MvRtvzZ9">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="テスト" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="4yeXdEGfUQpX5SLNoKK0JDyJjn8WCVH0MvRtvzZ9" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items?keyword=%E3%83%86%E3%82%B9%E3%83%88"\n
+        class="">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?keyword=%E3%83%86%E3%82%B9%E3%83%88&amp;tab=mylist"\n
+        class="active">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\SearchTest::test_keyword_is_kept_on_mylist_tab)
+After Test Method Called (Tests\Feature\SearchTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\SearchTest::tearDown
+Test Finished (Tests\Feature\SearchTest::test_keyword_is_kept_on_mylist_tab)
+After Last Test Method Called (Tests\Feature\SearchTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\SearchTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\SearchTest, 2 tests)
+Test Suite Started (Tests\Feature\SoldLabelTest, 2 tests)
+Test Preparation Started (Tests\Feature\SoldLabelTest::test_index_shows_sold_label_for_purchased_items)
+Before Test Method Called (Tests\Feature\SoldLabelTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\SoldLabelTest::setUp
+Test Prepared (Tests\Feature\SoldLabelTest::test_index_shows_sold_label_for_purchased_items)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "売れた品" [UTF-8](length: 12), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/62" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                                    <span class="sold-badge">Sold</span>\n
+                \n
+            </div>\n
+            <p class="item-name">売れた品</p>\n
+            <p class="item-price">¥45,064</p>\n
+        </a>\n
+                <a href="http://localhost/items/63" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">未売品</p>\n
+            <p class="item-price">¥14,032</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "未売品" [UTF-8](length: 9), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/62" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                                    <span class="sold-badge">Sold</span>\n
+                \n
+            </div>\n
+            <p class="item-name">売れた品</p>\n
+            <p class="item-price">¥45,064</p>\n
+        </a>\n
+                <a href="http://localhost/items/63" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">未売品</p>\n
+            <p class="item-price">¥14,032</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "Sold" [ASCII](length: 4), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="glusOjPeROC1dX6uvhGqkojfNzymxRrD04LyqlGZ" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="active">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/62" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                                    <span class="sold-badge">Sold</span>\n
+                \n
+            </div>\n
+            <p class="item-name">売れた品</p>\n
+            <p class="item-price">¥45,064</p>\n
+        </a>\n
+                <a href="http://localhost/items/63" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                \n
+            </div>\n
+            <p class="item-name">未売品</p>\n
+            <p class="item-price">¥14,032</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\SoldLabelTest::test_index_shows_sold_label_for_purchased_items)
+After Test Method Called (Tests\Feature\SoldLabelTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\SoldLabelTest::tearDown
+Test Finished (Tests\Feature\SoldLabelTest::test_index_shows_sold_label_for_purchased_items)
+Test Preparation Started (Tests\Feature\SoldLabelTest::test_mylist_shows_sold_label_too)
+Before Test Method Called (Tests\Feature\SoldLabelTest::setUp)
+Before Test Method Finished:
+- Tests\Feature\SoldLabelTest::setUp
+Test Prepared (Tests\Feature\SoldLabelTest::test_mylist_shows_sold_label_too)
+Assertion Succeeded (Constraint: is true, Value: true, Message: Expected response status code [201, 301, 302, 303, 307, 308] but received 302.)
+Assertion Succeeded (Constraint: is identical to 200, Value: 200, Message: Expected response status code [200] but received 200.)
+Assertion Succeeded (Constraint: contains "マイリスト売れた品" [UTF-8](length: 27), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="wrQFmq1ziHO3jD5GNBFlmK4H4uPy72SlYvIj0Haw">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="wrQFmq1ziHO3jD5GNBFlmK4H4uPy72SlYvIj0Haw" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="active">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/64" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                                    <span class="sold-badge">Sold</span>\n
+                \n
+            </div>\n
+            <p class="item-name">マイリスト売れた品</p>\n
+            <p class="item-price">¥1,193</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Assertion Succeeded (Constraint: contains "Sold" [ASCII](length: 4), Value: '<!DOCTYPE html>\n
+<html lang="ja">\n
+    <meta charset="UTF-8">\n
+    <title>My App</title>\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n
+    <meta name="csrf-token" content="wrQFmq1ziHO3jD5GNBFlmK4H4uPy72SlYvIj0Haw">\n
+    <link rel="stylesheet" href="http://localhost/css/app.css">\n
+    <link rel="stylesheet" href="http://localhost/css/header.css">\n
+    <link rel="stylesheet" href="http://localhost/css/common.css">\n
+\n
+</head>\n
+<body>\n
+    <header class="main-header">\n
+    <div class="header-inner">\n
+        <div class="logo">\n
+            <img src="http://localhost/images/coachtech-logo.svg" alt="COACHTECH" class="logo-image">\n
+        </div>\n
+\n
+        <form class="search-form" method="GET" action="http://localhost/items">\n
+            <input type="text" name="keyword" value="" placeholder="なにをお探しですか？">\n
+                <button type="submit" class="btn-red">検索</button>\n
+        </form>\n
+\n
+\n
+        <nav class="header-nav">\n
+                            <a href="http://localhost/logout"\n
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>\n
+                <a href="http://localhost/mypage">マイページ</a>\n
+                <a href="http://localhost/sell" class="btn-outline">出品</a>\n
+\n
+                <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">\n
+                    <input type="hidden" name="_token" value="wrQFmq1ziHO3jD5GNBFlmK4H4uPy72SlYvIj0Haw" autocomplete="off">                </form>\n
+                    </nav>\n
+    </div>\n
+</header>\n
+    <main>\n
+        <link rel="stylesheet" href="http://localhost/css/items/index.css">\n
+<link rel="stylesheet" href="http://localhost/css/header.css">\n
+\n
+<div class="items-wrapper">\n
+    <div class="items-container">\n
+        <h2 class="items-title">商品一覧</h2>\n
+\n
+    \n
+    \n
+    <div class="tab">\n
+        <a href="http://localhost/items"\n
+        class="">おすすめ</a>\n
+\n
+        <a href="http://localhost/items?tab=mylist"\n
+        class="active">マイリスト</a>\n
+    </div>\n
+\n
+    \n
+    <div class="item-list">\n
+                <a href="http://localhost/items/64" class="item-card">\n
+            <div class="item-thumb" style="position:relative">\n
+            <img src="http://localhost/images/no-image.png" alt="商品画像" class="item-image">\n
+                                    <span class="sold-badge">Sold</span>\n
+                \n
+            </div>\n
+            <p class="item-name">マイリスト売れた品</p>\n
+            <p class="item-price">¥1,193</p>\n
+        </a>\n
+            </div>\n
+\n
+    \n
+    <div class="pagination">\n
+        \n
+    </div>\n
+    </div>\n
+</div>\n
+    </main>\n
+</body>\n
+</html>\n
+')
+Test Passed (Tests\Feature\SoldLabelTest::test_mylist_shows_sold_label_too)
+After Test Method Called (Tests\Feature\SoldLabelTest::tearDown)
+After Test Method Finished:
+- Tests\Feature\SoldLabelTest::tearDown
+Test Finished (Tests\Feature\SoldLabelTest::test_mylist_shows_sold_label_too)
+After Last Test Method Called (Tests\Feature\SoldLabelTest::tearDownAfterClass)
+After Last Test Method Finished:
+- Tests\Feature\SoldLabelTest::tearDownAfterClass
+Test Suite Finished (Tests\Feature\SoldLabelTest, 2 tests)
+Test Suite Finished (Feature, 54 tests)
+Test Suite Finished (/var/www/phpunit.xml, 55 tests)
+Test Runner Execution Finished
+Test Runner Finished
+PHPUnit Finished (Shell Exit Code: 1)

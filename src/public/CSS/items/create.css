@@ -1,0 +1,213 @@
+/* コンテナ */
+.form-wrapper {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.form-title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 28px 0 8px;
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+    margin: 0 0 16px;
+}
+
+/* グループ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.help {
+    color: #777;
+    font-size: 12px;
+}
+
+/* 入力 */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* 画像アップロード（Figma風） */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.image-drop {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 48px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.image-drop.dragging {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+.image-drop.has-image {
+    padding: 16px;
+}
+
+.image-select-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ff6f61;
+    border-radius: 20px;
+    background: #fff;
+    color: #ff6f61;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.image-select-btn:hover {
+    background: #ff6f61;
+    color: #fff;
+}
+
+.image-preview {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin: 0 auto 12px;
+    display: block;
+}
+
+/* カテゴリー（大量でも整列） */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ff6f61;
+    color: #ff6f61;
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    transition: .15s;
+}
+
+/* inputは隠す */
+.category-tag>input {
+    display: none;
+}
+
+/* hover & checked表現 */
+.category-tag:hover {
+    background: #ff6f61;
+    color: #fff;
+}
+
+.category-tag>input:checked+span {
+    color: #fff;
+    background: #ff6f61;
+    border-radius: 16px;
+    padding: 2px 8px;
+    /* 文字背景も反転 */
+}
+
+.category-tag:has(> input:checked) {
+    background: #ff6f61;
+    color: #fff;
+    border-color: #ff6f61;
+}
+
+/* 送信ボタン */
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #ff6f61;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    opacity: .9;
+}
+
+/* 背景 */
+body {
+    background: #f7f7f7;
+}
+
+.price-input {
+    position: relative;
+}
+
+.price-input .yen {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+}
+
+.price-input input {
+    padding-left: 28px;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

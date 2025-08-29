@@ -1,0 +1,126 @@
+.main-header {
+    background: #000;
+    min-height: 64px;
+    padding: 8px 0;
+    box-sizing: border-box;
+}
+
+.main-header .header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    gap: 16px;
+}
+
+/* ロゴ（左） */
+.main-header .logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.main-header .logo img {
+    height: 40px;
+    display: block;
+}
+
+/* 検索（中央） */
+.main-header .search-form {
+    flex: 1 1 auto;
+    display: flex !important;
+    gap: 8px;
+    max-width: 500px !important;
+    margin: 0 auto
+}
+
+.main-header .search-form input[type="text"],
+.main-header .search-form input[type="search"] {
+    flex: 1;
+    height: 40px;
+    padding: 8px 12px;
+    line-height: 24px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.main-header .search-form button,
+.main-header .btn-red {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e60033;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.main-header .search-form button:hover,
+.main-header .btn-red:hover {
+    background: #cc002b;
+}
+
+/* ナビ（右端） */
+.main-header .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex: 0 0 auto;
+    margin-right: 32px;
+}
+
+.main-header .header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* 出品ボタン（白枠） */
+.main-header .header-nav .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 12px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #000;
+    background: #fff;
+    transition: filter .2s;
+    margin-right: 8px;
+}
+
+.main-header .header-nav .btn-outline:hover {
+    filter: brightness(0.95);
+}
+
+/* SP */
+@media (max-width:768px) {
+    .main-header .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .main-header .search-form {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .main-header .header-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-left: 0;
+    }
+}

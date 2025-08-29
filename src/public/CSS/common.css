@@ -1,0 +1,38 @@
+.button-common {
+    background-color: #e60033;
+    /* コーチテックの赤 */
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.button-common:hover {
+    background-color: #cc002e;
+}
+
+/* 共通ボタンスタイル */
+.btn-red {
+    background-color: #e60033;
+    color: white;
+    font-size: 13px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.btn-red:hover {
+    background-color: #cc002b;
+    /* 少し暗く */
+}

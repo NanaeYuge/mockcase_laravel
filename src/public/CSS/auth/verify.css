@@ -1,0 +1,22 @@
+.verify-wrapper {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.verify-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.verify-button {
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.verify-link {
+    margin-top: 10px;
+}
