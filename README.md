@@ -71,7 +71,6 @@ for mockcase laravel1
 - [Zenn - LaravelのER図設計](https://zenn.dev/bloomer/articles/3f73f7d02e5a63)
 
 ---
-
 ## 5. セットアップ手順
 
 ```bash
@@ -92,11 +91,17 @@ php artisan migrate --seed
 # 開発サーバー起動
 php artisan serve
 
-6. テスト
+```
+
+## 6. テスト
+
 本アプリケーションでは PHPUnit を用いた自動テストを実装しています。
 
+```bash
 php artisan test
-7. ライセンス
+```
+
+## 7. ライセンス
+
 本ソフトウェアは学習用の模擬案件として作成されています。
 営利目的での利用・配布は禁止されています。
-
