@@ -1,5 +1,8 @@
 {
     "require": {
         "stripe/stripe-php": "^15"
+    },
+    "require-dev": {
+        "laravel/sail": "^1.45"
     }
 }

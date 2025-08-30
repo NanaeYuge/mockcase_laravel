@@ -18,7 +18,9 @@
     <server name="QUEUE_CONNECTION" value="sync"/>
     <server name="SESSION_DRIVER" value="array"/>
     <server name="TELESCOPE_ENABLED" value="false"/>
-  </php>
+    <server name="MAIL_FROM_ADDRESS" value="test@example.com"/>
+    <server name="MAIL_FROM_NAME" value="Test"/>
+</php>
   <source>
     <include>
       <directory suffix=".php">./app</directory>

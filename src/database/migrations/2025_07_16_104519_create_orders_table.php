@@ -20,6 +20,8 @@ class CreateOrdersTable extends Migration
     $table->string('payment_method');
     $table->string('shipping_address')->nullable();
     $table->timestamps();
+    $table->integer('total_amount')->default(0);
+
 });
     }
 

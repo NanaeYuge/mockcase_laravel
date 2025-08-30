@@ -144,10 +144,8 @@ return [
     */
 
     'features' => [
-    Features::registration(),
-    Features::resetPasswords(),
-    Features::emailVerification(),
+    Laravel\Fortify\Features::registration(),
+    Laravel\Fortify\Features::emailVerification(),
 ],
-
 
 ];

@@ -37,6 +37,7 @@ class ItemsTableSeeder extends Seeder
             'payment_method'  => 'クレジットカード',
             'status'          => '購入完了',
             'shipping_address'=> 'テスト住所',
+            'total_amount' => 1000,
         ]);
     }
 }
