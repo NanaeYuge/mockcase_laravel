@@ -55,7 +55,7 @@ ER 図：
 
 ### 前提
 - Docker / Docker Compose が使えること
-- ポート競合がないこと（MySQL, MailHog など）
+- 利用ポート: App: 8081, MailHog: 8025, MySQL: 3306（競合がないこと）
 
 ### 手順
 ```bash
@@ -67,7 +67,7 @@ cd mockcase-laravel
 docker compose up -d --build
 
 # 3) 依存インストール
-docker compose exec php composer install
+docker compose exec php composer install --no-interaction --prefer-dist
 
 # 4) 環境変数
 docker compose exec php cp .env.example .env
@@ -76,6 +76,14 @@ docker compose exec php php artisan key:generate
 # 5) メール（MailHog）と差出人設定（必須）
 #   MailHog: http://localhost:8025
 #   下記を .env に追記/確認してください
+# APP_URL=http://localhost:8081
+# APP_ENV=local
+# APP_DEBUG=true
+# DB_HOST=mysql
+# DB_PORT=3306
+# DB_DATABASE=laravel
+# DB_USERNAME=laravel
+# DB_PASSWORD=secret
 #   MAIL_MAILER=smtp
 #   MAIL_HOST=mailhog
 #   MAIL_PORT=1025
@@ -94,20 +102,40 @@ docker compose exec php php artisan migrate --seed
 # 8) 動作確認（テスト）
 docker compose exec php php artisan test
 ```
+アクセス: http://localhost:8081
+MailHog: http://localhost:8025
 
-## 5. 開発中の便利情報
-・MailHog: http://localhost:8025（認証/パスリセットメールの確認）
+## 5. 開発メモ
+-MailHog: http://localhost:8025（認証/パスリセットメールの確認）
 
-・画像アップロード: storage/app/public → public/storage（storage:link 必須）
+-画像アップロード: storage/app/public → public/storage（storage:link 必須）
 
-・既定ユーザー: Seeder で投入（必要に応じて database/seeders を参照）
+-既定ユーザー: Seeder で投入（必要に応じて database/seeders を参照）
 
 ## 6.テスト
 ```bash
 docker compose exec php php artisan test
+
+# 500 が出る/設定反映されない時
+docker compose exec php php artisan config:clear
+docker compose exec php php artisan cache:clear
+docker compose exec php php artisan route:clear
+docker compose exec php php artisan view:clear
+
+# 権限（macOS/Linux）
+docker compose exec php sh -lc 'chmod -R 777 storage bootstrap/cache'
+
+# ログ確認
+docker compose exec php sh -lc 'tail -n 200 storage/logs/laravel.log'
+
 ```
 
-## 7. ライセンス / 注意
+## 7. 提出物について
+-vendor/ と node_modules/ は 含めません（容量削減）
+
+-.env も 含めません（セキュリティのため）。レビュワーは上記手順④で再現可。
+
+## ８. ライセンス / 注意
 本リポジトリは学習用の模擬案件です。営利目的での再配布はご遠慮ください。
 
 ※ Stripe 決済はテストモードのダミーキーで動作確認しており、実決済は行われません。
