@@ -28,7 +28,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/stripe/webhook', [StripeCheckoutController::class, 'webhook'])->name('stripe.webhook');
 
 /* 認証必須 */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
 
     /* マイページ */
     Route::get('/mypage', [ProfileController::class, 'show'])->name('mypage');

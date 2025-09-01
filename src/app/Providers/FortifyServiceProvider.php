@@ -13,68 +13,80 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
-use Laravel\Fortify\Contracts\LoginResponse;
-use Laravel\Fortify\Contracts\RegisterResponse;
-use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
-use App\Http\Responses\VerifyEmailViewResponse as CustomVerifyEmailViewResponse;
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse as VerifyEmailViewResponseContract;
 
+use App\Http\Responses\VerifyEmailViewResponse as CustomVerifyEmailViewResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
-        public function toResponse($request)
-        {
-            return redirect()->route('profile.edit'); // プロフィール設定画面へのルート
-        }
-    });
+        $this->app->singleton(RegisterResponseContract::class, function () {
+            return new class implements RegisterResponseContract {
+                public function toResponse($request)
+                {
+                    return redirect('/email/verify');
+                }
+            };
+        });
+
+        $this->app->singleton(LoginResponseContract::class, function () {
+            return new class implements LoginResponseContract {
+                public function toResponse($request)
+                {
+                    $user = Auth::user();
+
+                    if (empty($user->address) || empty($user->postal_code) || empty($user->name)) {
+                        return redirect()->route('profile.edit');
+                    }
+
+                    return redirect()->intended(route('home'));
+                }
+            };
+        });
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
-{
-    $this->app->bind(
-        VerifyEmailViewResponse::class,
-        CustomVerifyEmailViewResponse::class
-    );
-    Fortify::createUsersUsing(CreateNewUser::class);
-    Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-    Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-    Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-    Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
+    {
+        $this->app->bind(
+            VerifyEmailViewResponseContract::class,
+            CustomVerifyEmailViewResponse::class
+        );
 
-    RateLimiter::for('login', function (Request $request) {
-        $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
-        return Limit::perMinute(5)->by($throttleKey);
-    });
+        Fortify::createUsersUsing(CreateNewUser::class);
+        Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
+        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
+        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+        Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
 
-    RateLimiter::for('two-factor', function (Request $request) {
-        return Limit::perMinute(5)->by($request->session()->get('login.id'));
-    });
+        RateLimiter::for('login', function (Request $request) {
+            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            return Limit::perMinute(5)->by($throttleKey);
+        });
 
-    // 登録後はメール認証画面へ
-    app()->singleton(RegisterResponse::class, function () {
-        return new class implements RegisterResponse {
-            public function toResponse($request)
-            {
-                return redirect('/email/verify');
+        RateLimiter::for('two-factor', function (Request $request) {
+            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+        });
+
+        Fortify::authenticateUsing(function (\Illuminate\Http\Request $request) {
+    $user = User::where('email', $request->email)->first();
+
+            if ($user &&
+            Hash::check($request->password, $user->password)) {
+
+            if (is_null($user->email_verified_at)) {
+            return null;
             }
-        };
+
+            return $user;
+        }
+        return null;
     });
 
-    app()->singleton(LoginResponse::class, function () {
-        return new class implements LoginResponse {
-            public function toResponse($request)
-            {
-                return redirect()->intended('/');
-            }
-        };
-    });
-}
+    }
 }

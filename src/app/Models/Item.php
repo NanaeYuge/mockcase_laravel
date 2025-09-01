@@ -15,7 +15,7 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'name', 'description', 'price', 'condition', 'image_path', 'is_sold',
+        'user_id', 'name', 'description', 'price', 'condition', 'image_path','img_url','is_sold',
     ];
 
     protected $casts = [
@@ -48,7 +48,7 @@ class Item extends Model
 
     public function getImageUrlAttribute(): string
     {
-        $path = $this->image_path;
+        $path = $this->image_path ?? $this->img_url ?? $this->image ?? null;
         if (!$path) return asset('images/no-image.png');
         if (preg_match('~^https?://~', $path)) return $path;
 

@@ -6,3 +6,6 @@
 .DS_Store
 .idea
 *.logdocker/mysql/data/
+.env
+vendor/
+node_modules/

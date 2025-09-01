@@ -112,6 +112,23 @@ MailHog: http://localhost:8025
 
 -既定ユーザー: Seeder で投入（必要に応じて database/seeders を参照）
 
+### メール認証の確認方法（採点者向け）
+
+**方法A: MailHog（推奨）**
+1. 新規登録後、/email/verify 画面に遷移します。
+2. http://localhost:8025 を開き、"Verify Email" メールのリンクをクリックして認証してください。
+
+**方法B: 認証済みデモユーザー**
+- Email: demo@example.com
+- Pass : password
+- 上記アカウントは認証済みのため、そのままログインして機能を確認できます。
+- 事前に `docker compose exec php php artisan migrate:fresh --seed` を実行してください。
+
+**方法C: ログ出力で認証URLを確認**
+- `.env` にて `MAIL_MAILER=log` を設定すると、`storage/logs/laravel.log` に認証URLが出力されます。
+- URLをブラウザで開いて認証してください。
+
+
 ## 6.テスト
 ```bash
 docker compose exec php php artisan test
